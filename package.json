@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "lint": "prettier --check . && eslint . && stylelint \"**/*.css\"",
-    "lint:fix": "prettier --write . && eslint . --fix && stylelint \"**/*.css\" --fix",
+    "lint": "prettier --check . && eslint . && stylelint \"**/*.scss\"",
+    "lint:fix": "prettier --write . && eslint . --fix && stylelint \"**/*.scss\" --fix",
     "start": "webpack serve --mode development --watch",
     "build": "webpack --mode production"
   },
