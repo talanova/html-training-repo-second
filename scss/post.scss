@@ -1,12 +1,12 @@
 .post {
   margin-bottom: 1rem;
   padding: 1rem;
-  background: #ffffff;
-  box-shadow: 0 1px 4px 0 RGB(60 64 67 / 30%);
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgb(60 64 67 / 30%);
 }
 
 .post__header {
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .post__header h2 {
@@ -15,16 +15,16 @@
 }
 
 .post__body {
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 @mixin truncate($line-clamp) {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: $line-clamp;
-    -webkit-box-orient: vertical;
-  }
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-clamp;
+  -webkit-box-orient: vertical;
+}
 
 .post__snippet {
   @include truncate(3);
@@ -44,7 +44,6 @@
   border-radius: 5px;
   padding: 0.5rem;
   float: right;
-  padding: 5px;
   transition: all 0.5s;
 
   &:hover {
@@ -52,5 +51,3 @@
     background-color: #757575;
   }
 }
-
-
