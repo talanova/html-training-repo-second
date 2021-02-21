@@ -7,7 +7,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "./src/index.js"),
+    main: path.resolve(__dirname, "./js/blog.js"),
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -20,7 +20,7 @@ module.exports = {
     port: 9000,
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: "./pages/index.html" }),
+    new HtmlWebpackPlugin({ template: "./pages/blog.html" }),
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new BrowserSyncPlugin(
@@ -38,9 +38,8 @@ module.exports = {
   module: {
     rules: [
       {
-        // https://webpack.js.org/loaders/css-loader/
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.(scss|css)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
   },
