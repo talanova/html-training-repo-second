@@ -2,5 +2,5 @@
 
 .page__header{padding-left:0}.page__header a{position:absolute}.page__header h1{margin-left:calc(32px + 1rem);float:left;font-size:2rem}
 
-.feedback{margin-bottom:1rem;padding:1rem;background:#fff;box-shadow:0 1px 4px 0 RGB(60 64 67/30%);width:100%}.feedback__submit{width:100%;color:#757575;background-color:#f4f4f4;padding:0.5rem;margin:0.25rem 0;border:none;border-radius:4px;cursor:pointer}.feedback__submit:hover{color:#f4f4f4;background-color:#757575}.feedback__input{width:100%;padding:0.5rem;margin:0.5rem 0;display:block;border:1px solid #757575;border-radius:4px}.feedback__multi_input{height:100px;resize:none;width:100%;padding:0.5rem;margin:0.5rem 0;display:block;border:1px solid #757575;border-radius:4px;font:16px Roboto, sans-serif}
+.feedback{margin-bottom:1rem;padding:1rem;background:white;box-shadow:0 1px 4px 0 RGB(60 64 67/30%);width:100%}.feedback__submit{width:100%;color:#757575;background-color:#f4f4f4;padding:0.5rem;margin:0.25rem 0;border:none;border-radius:4px;cursor:pointer}.feedback__submit:hover{color:#f4f4f4;background-color:#757575}.feedback__input{width:100%;padding:0.5rem;margin:0.5rem 0;display:block;border:1px solid #757575;border-radius:4px}.feedback__multi_input{height:100px;resize:none;width:100%;padding:0.5rem;margin:0.5rem 0;display:block;border:1px solid #757575;border-radius:4px;font:16px Roboto, sans-serif}
 
