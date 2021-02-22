@@ -1,3 +1,5 @@
+@import "./consts.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +11,8 @@
 }
 
 body {
-  background-color: #f4f4f4;
-  color: #757575;
+  background-color: $lite;
+  color: $dark;
   font: 16px Roboto, sans-serif;
   margin: 0;
   min-height: 100vh;
@@ -38,7 +40,7 @@ body {
   h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: #424242;
+    color: $header-font-color;
     text-align: center;
   }
 }
@@ -56,13 +58,15 @@ body {
     padding: 0 0.25rem;
     display: inline-block;
     padding-bottom: 2px;
-    background: linear-gradient(#424242, #424242) center bottom;
+    background:
+      linear-gradient($header-font-color, $header-font-color) center
+      bottom;
     background-size: 0% 2px;
     background-repeat: no-repeat;
     transition: all 0.5s;
 
     a {
-      color: #424242;
+      color: $header-font-color;
       text-decoration: none;
     }
 

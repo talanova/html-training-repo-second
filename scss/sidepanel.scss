@@ -1,3 +1,7 @@
+@import "./consts.scss";
+
+$lite-font: #d8d4ea;
+
 .sidepanel {
   width: 0;
   position: fixed;
@@ -6,7 +10,7 @@
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #757575;
+  background-color: $dark;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -16,18 +20,36 @@
   }
 }
 
+.sidepanel__owner_info {
+  display: block;
+  padding: 1rem;
+
+  img {
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+  }
+
+  label {
+    margin-top: 1rem;
+    text-align: center;
+    display: block;
+    color: $lite-font;
+  }
+}
+
 .sidepanel__nav__item {
-  padding: 0.25rem 0.25rem 0.25rem 1rem;
+  padding: 0.25rem 1rem;
 
   a {
     text-decoration: none;
     font-size: 1rem;
-    color: #d8d4ea;
+    color: $lite-font;
     display: block;
     transition: all 0.5s;
 
     &:hover {
-      color: #f4f4f4;
+      color: $lite;
     }
   }
 }
@@ -37,14 +59,14 @@
   top: 1rem;
   right: 1rem;
   cursor: pointer;
-  color: #d8d4ea;
+  color: $lite-font;
   font-size: 1.25rem;
   border-style: none;
   background-color: transparent;
   transition: all 0.5s;
 
   &:hover {
-    color: #f4f4f4;
+    color: $lite;
   }
 
   &:focus {
@@ -65,7 +87,7 @@
   transition: all 0.5s;
 
   &:hover {
-    color: #f4f4f4;
-    background-color: #757575;
+    color: $lite;
+    background-color: $dark;
   }
 }
