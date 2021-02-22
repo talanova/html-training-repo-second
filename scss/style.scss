@@ -51,24 +51,24 @@ body {
   ul {
     list-style: none;
   }
-}
 
-.nav__item {
-  padding: 0 0.25rem;
-  display: inline-block;
-  padding-bottom: 2px;
-  background: linear-gradient(#424242, #424242) center bottom; /* OR bottom right OR bottom left */
-  background-size: 0% 2px;
-  background-repeat: no-repeat;
-  transition: all 0.45s;
+  &__item {
+    padding: 0 0.25rem;
+    display: inline-block;
+    padding-bottom: 2px;
+    background: linear-gradient(#424242, #424242) center bottom;
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
 
-  a {
-    color: #424242;
-    text-decoration: none;
-  }
+    a {
+      color: #424242;
+      text-decoration: none;
+    }
 
-  &:hover {
-    background-size: 100% 2px;
+    &:hover {
+      background-size: 100% 2px;
+    }
   }
 }
 
