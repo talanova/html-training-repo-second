@@ -1,19 +1,18 @@
 @import "./consts.scss";
+@import "./fonts.scss";
 
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: $font-size;
+  font-family: $font-family;
   box-sizing: border-box;
   position: relative;
-
-  //border: red 1px solid;
 }
 
 body {
   background-color: $lite;
   color: $dark;
-  font: 16px Roboto, sans-serif;
   margin: 0;
   min-height: 100vh;
 }
@@ -40,7 +39,7 @@ body {
   h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: $header-font-color;
+    color: $font-color;
     text-align: center;
   }
 }
@@ -58,15 +57,13 @@ body {
     padding: 0 0.25rem;
     display: inline-block;
     padding-bottom: 2px;
-    background:
-      linear-gradient($header-font-color, $header-font-color) center
-      bottom;
+    background: linear-gradient($font-color, $font-color) center bottom;
     background-size: 0% 2px;
     background-repeat: no-repeat;
     transition: all 0.5s;
 
     a {
-      color: $header-font-color;
+      color: $font-color;
       text-decoration: none;
     }
 

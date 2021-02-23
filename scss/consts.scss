@@ -1,3 +1,11 @@
+//@import "./fonts.scss";
+
 $dark: #757575;
 $lite: #f4f4f4;
-$header-font-color: #424242;
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+$font-color: #424242;
+$font-color-lite: #d8d4ea;
+$font-family: "Dancing Script", sans-serif;
+$font-size: 18px;
