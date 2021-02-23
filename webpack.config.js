@@ -8,7 +8,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "./js/index.js"),
+    index: path.resolve(__dirname, "./js/index.js"),
     post: path.resolve(__dirname, "./js/post.js"),
     archive: path.resolve(__dirname, "./js/archive.js"),
     feedback: path.resolve(__dirname, "./js/feedback.js"),
@@ -73,5 +73,10 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
+  },
+  resolve: {
+    alias: {
+      "express-handlebars": "handlebars/dist/handlebars.js",
+    },
   },
 };

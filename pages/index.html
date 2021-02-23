@@ -44,84 +44,40 @@
           </ul>
         </nav>
       </header>
-      <main class="main">
-        <ul>
-          <li>
-            <article class="post">
-              <header class="post__header">
-                <h2>Post title</h2>
-              </header>
-              <div class="post__body">
-                <p class="post__snippet">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Praesentium dolorem quod at dolores natus incidunt esse hic.
-                  Molestiae voluptatum rem veritatis facere ullam harum sunt
-                  corrupti! Reprehenderit commodi aut illo. Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Est modi consequuntur
-                  ducimus delectus facilis alias ullam voluptates dignissimos,
-                  recusandae doloremque quidem impedit soluta iusto sequi!
-                  Corrupti hic alias reiciendis? Veritatis.
-                </p>
-              </div>
-              <footer class="post__footer">
-                <a href="./post.html">
-                  <button class="post__footer__btn">Read more</button>
-                </a>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="post">
-              <header class="post__header">
-                <h2>Post title</h2>
-              </header>
-              <div class="post__body">
-                <p class="post__snippet">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Praesentium dolorem quod at dolores natus incidunt esse hic.
-                  Molestiae voluptatum rem veritatis facere ullam harum sunt
-                  corrupti! Reprehenderit commodi aut illo. Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Est modi consequuntur
-                  ducimus delectus facilis alias ullam voluptates dignissimos,
-                  recusandae doloremque quidem impedit soluta iusto sequi!
-                  Corrupti hic alias reiciendis? Veritatis.
-                </p>
-              </div>
-              <footer class="post__footer">
-                <a href="./post.html">
-                  <button class="post__footer__btn">Read more</button>
-                </a>
-              </footer>
-            </article>
-          </li>
-          <li>
-            <article class="post">
-              <header class="post__header">
-                <h2>Post title</h2>
-              </header>
-              <div class="post__body">
-                <p class="post__snippet">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Praesentium dolorem quod at dolores natus incidunt esse hic.
-                  Molestiae voluptatum rem veritatis facere ullam harum sunt
-                  corrupti! Reprehenderit commodi aut illo. Lorem ipsum dolor
-                  sit amet consectetur adipisicing elit. Est modi consequuntur
-                  ducimus delectus facilis alias ullam voluptates dignissimos,
-                  recusandae doloremque quidem impedit soluta iusto sequi!
-                  Corrupti hic alias reiciendis? Veritatis.
-                </p>
-              </div>
-              <footer class="post__footer">
-                <a href="./post.html">
-                  <button class="post__footer__btn">Read more</button>
-                </a>
-              </footer>
-            </article>
-          </li>
-        </ul>
-      </main>
+      <main id="main-destination" class="main"></main>
       <pagefooter-component></pagefooter-component>
     </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/X.X.X/handlebars.js"
+    ></script>
+    <script id="main-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each articles}}
+          <li>
+            <article class="post">
+              <header class="post__header">
+                <h2>
+                  {{article.title}}
+                </h2>
+              </header>
+              <div class="post__body">
+                <p class="post__snippet">
+                  {{article.text}}
+                </p>
+              </div>
+              <footer class="post__footer">
+                <a href="./post.html">
+                  <button class="post__footer__btn">
+                    Read more
+                  </button>
+                </a>
+              </footer>
+            </article>
+          </li>
+        {{/each}}
+      </ul>
+    </script>
     <script src="index.js" type="text/javascript"></script>
     <script src="pagefooter.js" type="text/javascript"></script>
   </body>
