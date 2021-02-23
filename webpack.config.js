@@ -12,6 +12,8 @@ module.exports = {
     post: path.resolve(__dirname, "./js/post.js"),
     archive: path.resolve(__dirname, "./js/archive.js"),
     feedback: path.resolve(__dirname, "./js/feedback.js"),
+    pageheader: path.resolve(__dirname, "./components/pageheader.js"),
+    pagefooter: path.resolve(__dirname, "./components/pagefooter.js"),
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
