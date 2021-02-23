@@ -2,9 +2,8 @@ import "../scss/style.scss";
 import "../scss/sidepanel.scss";
 import "../scss/post.scss";
 
-const Handlebars = require("handlebars");
-
-const json = require("../data.json");
+import Handlebars from "handlebars/dist/handlebars";
+import json from "../data.json";
 
 console.log(json);
 
