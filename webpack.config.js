@@ -7,6 +7,10 @@ const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
 
+const glob = require("glob");
+
+const pages = glob.sync("pages/*.html");
+
 module.exports = {
   entry: {
     main: path.resolve(__dirname, "./js/index.js"),
@@ -22,23 +26,13 @@ module.exports = {
     port: 9000,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./pages/index.html",
-      filename: "index.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "./pages/archive.html"),
-      filename: "archive.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "./pages/post.html"),
-      filename: "post.html",
-    }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "./pages/feedback.html"),
-      filename: "feedback.html",
-    }),
-
+    ...pages.map(
+      (page) =>
+        new HtmlWebpackPlugin({
+          filename: page.replace(/^pages\//, ""),
+          template: page,
+        })
+    ),
     new HtmlWebpackPartialsPlugin([
       {
         path: path.join(__dirname, "./pages/partials/post-list-main.html"),
@@ -85,11 +79,9 @@ module.exports = {
         },
       ],
     }),
-
     new MiniCssExtractPlugin({
       filename: "./style.css",
     }),
-
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new BrowserSyncPlugin(
@@ -110,14 +102,6 @@ module.exports = {
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
-      /* {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: "asset/resource",
-      },
-      {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
-        type: "asset/inline",
-      },/ */
       {
         test: /\.(scss|css)$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
