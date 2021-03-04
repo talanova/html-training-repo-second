@@ -1,6 +1,3 @@
-@import "./consts.scss";
-@import "./fonts.scss";
-
 .post {
   margin-bottom: 1rem;
   padding: 1rem;
@@ -30,7 +27,7 @@
   -webkit-box-orient: vertical;
 }
 
-.post__snippet {
+.post__body__text_snippet {
   @include truncate(3);
 }
 

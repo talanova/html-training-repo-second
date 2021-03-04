@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -8,12 +9,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, "./js/index.js"),
-    post: path.resolve(__dirname, "./js/post.js"),
-    archive: path.resolve(__dirname, "./js/archive.js"),
-    feedback: path.resolve(__dirname, "./js/feedback.js"),
-    pageheader: path.resolve(__dirname, "./components/pageheader.js"),
-    pagefooter: path.resolve(__dirname, "./components/pagefooter.js"),
+    main: path.resolve(__dirname, "./js/index.js"),
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -27,23 +23,60 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./pages/post.html",
-      filename: "post.html",
-      chunks: ["post"],
-    }),
-    new HtmlWebpackPlugin({
-      template: "./pages/archive.html",
-      filename: "archive.html",
-      chunks: ["archive"],
-    }),
-    new HtmlWebpackPlugin({
-      template: "./pages/feedback.html",
-      filename: "feedback.html",
-      chunks: ["feedback"],
-    }),
-    new HtmlWebpackPlugin({
       template: "./pages/index.html",
+      filename: "index.html",
     }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "./pages/archive.html"),
+      filename: "archive.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "./pages/post.html"),
+      filename: "post.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "./pages/feedback.html"),
+      filename: "feedback.html",
+    }),
+
+    new HtmlWebpackPartialsPlugin([
+      {
+        path: path.join(__dirname, "./pages/partials/post-list-main.html"),
+        template_filename: ["index.html", "archive.html"],
+        location: "main",
+        priority: "replace",
+      },
+      {
+        path: path.join(__dirname, "./pages/partials/post-main.html"),
+        template_filename: ["post.html"],
+        location: "main",
+        priority: "replace",
+      },
+      {
+        path: path.join(__dirname, "./pages/partials/feedback-main.html"),
+        template_filename: ["feedback.html"],
+        location: "main",
+        priority: "replace",
+      },
+      {
+        path: path.join(__dirname, "./pages/partials/header.html"),
+        template_filename: ["archive.html", "post.html", "feedback.html"],
+        location: "header",
+        priority: "replace",
+      },
+      {
+        path: path.join(__dirname, "./pages/partials/footer.html"),
+        template_filename: [
+          "index.html",
+          "archive.html",
+          "post.html",
+          "feedback.html",
+        ],
+        location: "footer",
+        priority: "replace",
+      },
+    ]),
+
     new CopyPlugin({
       patterns: [
         {
@@ -52,6 +85,11 @@ module.exports = {
         },
       ],
     }),
+
+    new MiniCssExtractPlugin({
+      filename: "./style.css",
+    }),
+
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new BrowserSyncPlugin(
@@ -64,19 +102,26 @@ module.exports = {
         reload: false,
       }
     ),
-    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ["babel-loader"],
+      },
+      /* {
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: "asset/inline",
+      },/ */
       {
         test: /\.(scss|css)$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],
-  },
-  resolve: {
-    alias: {
-      "express-handlebars": "handlebars/dist/handlebars.js",
-    },
   },
 };
