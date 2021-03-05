@@ -8,11 +8,11 @@
 
 .post__header {
   padding: 0 1rem 1rem 1rem;
-}
 
-.post__header h2 {
-  font-weight: bold;
-  color: $font-color;
+  h2 {
+    font-weight: bold;
+    color: $font-color;
+  }
 }
 
 .post__body {
@@ -27,7 +27,7 @@
   -webkit-box-orient: vertical;
 }
 
-.post__body__text_snippet {
+.post__body-text-snippet {
   @include truncate(3);
 }
 
@@ -37,7 +37,7 @@
   clear: both;
 }
 
-.post__footer__btn {
+.post__footer-btn {
   cursor: pointer;
   border-style: none;
   color: $dark;

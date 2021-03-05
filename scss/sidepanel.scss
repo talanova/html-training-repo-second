@@ -16,7 +16,7 @@
   }
 }
 
-.sidepanel__owner_info {
+.sidepanel__owner-info {
   display: block;
   padding: 1rem;
 
@@ -34,7 +34,7 @@
   }
 }
 
-.sidepanel__nav__item {
+.sidepanel__nav-item {
   padding: 0.25rem 1rem;
 
   a {
@@ -50,7 +50,7 @@
   }
 }
 
-.sidepanel_closebtn {
+.sidepanel__closebtn {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -71,7 +71,7 @@
   }
 }
 
-.sidepanel_openbtn {
+.sidepanel__openbtn {
   position: fixed;
   left: 1rem;
   top: 1rem;

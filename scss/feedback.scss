@@ -37,11 +37,11 @@
 }
 
 .feedback__input,
-.feedback__multi_input {
+.feedback__multi-input {
   @include input-field;
 }
 
-.feedback__multi_input {
+.feedback__multi-input {
   height: 100px;
   resize: none;
 }
