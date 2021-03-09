@@ -1,0 +1,55 @@
+.post {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+  /* stylelint-disable-next-line */
+  box-shadow: 0 1px 4px 0 RGB(60 64 67 / 30%);
+}
+
+.post__header {
+  padding: 0 1rem 1rem 1rem;
+
+  h2 {
+    font-weight: bold;
+    color: $font-color;
+  }
+}
+
+.post__body {
+  padding: 0 1rem;
+}
+
+@mixin truncate($line-clamp) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-clamp;
+  -webkit-box-orient: vertical;
+}
+
+.post__body-text-snippet {
+  @include truncate(3);
+}
+
+.post__footer {
+  padding: 1rem;
+  overflow: hidden;
+  clear: both;
+}
+
+.post__footer-btn {
+  cursor: pointer;
+  border-style: none;
+  color: $dark;
+  border-radius: 5px;
+  padding: 0.5rem;
+  float: right;
+  transition: all 0.5s;
+  font-family: $font-family;
+  font-size: 0.9rem;
+
+  &:hover {
+    color: $lite;
+    background-color: $dark;
+  }
+}

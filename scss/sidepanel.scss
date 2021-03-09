@@ -1,0 +1,89 @@
+.sidepanel {
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $dark;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+
+  ul {
+    list-style: none;
+  }
+}
+
+.sidepanel__owner-info {
+  display: block;
+  padding: 1rem;
+
+  img {
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+  }
+
+  label {
+    margin-top: 1rem;
+    text-align: center;
+    display: block;
+    color: $font-color-lite;
+  }
+}
+
+.sidepanel__nav-item {
+  padding: 0.25rem 1rem;
+
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: $font-color-lite;
+    display: block;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $lite;
+    }
+  }
+}
+
+.sidepanel__closebtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  color: $font-color-lite;
+  font-size: 1.25rem;
+  border-style: none;
+  background-color: transparent;
+  transition: all 0.5s;
+
+  &:hover {
+    color: $lite;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.sidepanel__openbtn {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  border-style: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  transition: all 0.5s;
+
+  &:hover {
+    color: $lite;
+    background-color: $dark;
+  }
+}
